@@ -1,0 +1,39 @@
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        hikari:
+            connection-timeout: 60000
+            idle-timeout: 30000
+            max-lifetime: 2000000
+            maximum-pool-size: 50
+            minimum-idle: 10
+            pool-name: SpringBootJPAHikariCP
+            schema: spec
+            transaction-isolation: TRANSACTION_READ_COMMITTED
+        password: root
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:postgresql://127.0.0.1:5434/company_db
+        username: root
+    jpa:
+        generate-ddl: false
+        hibernate:
+            connection:
+                provider_class: org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+            ddl-auto: validate
+        open-in-view: true
+        properties:
+            hibernate:
+                default_schema: spec
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+                jdbc:
+                    lob:
+                        non_contextual_creation: true
+        show-sql: true
+    liquibase:
+        change-log: classpath:db/changelog/changelog.xml
+        default-schema: spec
+        liquibase-schema: liquibase_schema
+        password: root
+        url: jdbc:postgresql://127.0.0.1:5434/company_db
+        user: root
