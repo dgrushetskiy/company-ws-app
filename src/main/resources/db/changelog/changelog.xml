@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <property name="schema" value="public" global="true"/>
+  <changeSet logicalFilePath="db/changelog/changelog.xml" id="0" author="dg">
+    <tagDatabase tag="INITIAL"/>
+  </changeSet>
+
+  <include file="script_create/001_changeset-create-schema-db.xml" relativeToChangelogFile="true" context="local"/>
+  <include file="script_create/002_changeset-create-table-employees.xml" relativeToChangelogFile="true"/>
+  <include file="script_create/003_changeset-create-table-departments.xml" relativeToChangelogFile="true"/>
+  <include file="script_create/004_changeset-create-table-calendars.xml" relativeToChangelogFile="true"/>
+  <include file="script_create/005_changeset-create-table-companies.xml" relativeToChangelogFile="true"/>
+
+
+  <include file="script_insert/006_changeset-insert-data-table-companies.xml" relativeToChangelogFile="true"/>
+  <include file="script_insert/007_changeset-insert-data-table-calendars.xml" relativeToChangelogFile="true"/>
+  <include file="script_insert/008_changeset-insert-data-table-departments.xml" relativeToChangelogFile="true"/>
+  <include file="script_insert/009_changeset-insert-data-table-employees.xml" relativeToChangelogFile="true"/>
+<!--  <include file="script_insert/014_changeset-insert-data-table-documents.xml" relativeToChangelogFile="true"/>-->
+</databaseChangeLog>

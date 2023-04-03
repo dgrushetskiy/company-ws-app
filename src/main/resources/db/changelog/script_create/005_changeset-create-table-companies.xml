@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <property name="uuid_type" value="uuid" dbms="postgresql"/>
+  <property name="uuid_type" value="uuid" dbms="h2"/>
+
+  <property name="uuid_function" value="gen_random_uuid()" dbms="postgresql"/>
+  <property name="uuid_function" value="uuid()" dbms="h2"/>
+
+  <changeSet id="drop-table-companies" author="dg">
+    <preConditions onFail="MARK_RAN">
+      <tableExists tableName="companies"/>
+    </preConditions>
+    <dropTable cascadeConstraints="true" tableName="companies"/>
+  </changeSet>
+  <!-- create table companies -->
+  <changeSet id="create-table-companies" author="dg">
+    <createTable tableName="companies">
+      <column autoIncrement="true" name="id" type="bigserial">
+        <constraints primaryKey="true" nullable="false" primaryKeyName="pk_company"/>
+      </column>
+      <column name="created_at" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="updated_at" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="active" type="boolean" defaultValue="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="public_id" type="${uuid_type}" defaultValueComputed="${uuid_function}">
+        <constraints nullable="false" unique="true" uniqueConstraintName="idx_company_uuid_unq"/>
+      </column>
+      <column name="name" type="varchar(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="description" type="text">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <!-- Добавляем вторичный ключ company_id таблица departments -->
+    <addForeignKeyConstraint
+      baseColumnNames="company_id"
+      baseTableName="departments"
+      constraintName="fk_departments_company"
+      referencedColumnNames="id"
+      referencedTableName="companies"
+      onDelete="CASCADE"
+      onUpdate="RESTRICT"/>
+    <!-- Добавляем вторичный ключ document_id table calendars -->
+    <addForeignKeyConstraint
+      baseColumnNames="company_id"
+      baseTableName="calendars"
+      constraintName="fk_calendars_company"
+      referencedColumnNames="id"
+      referencedTableName="companies"
+      onDelete="CASCADE"
+      onUpdate="RESTRICT"/>
+  </changeSet>
+</databaseChangeLog>

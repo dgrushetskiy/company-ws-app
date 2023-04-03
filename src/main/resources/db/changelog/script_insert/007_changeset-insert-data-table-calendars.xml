@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet id="insert-data-table-calendars" author="dg">
+    <insert tableName="calendars">
+      <column name="active" value="true"/>
+      <column name="name" value="Годовая оценка компаний"/>
+      <column name="description" value="Годовая оценка компаний"/>
+<!--      <column name="begin_period" value="2022-01-01T00:00:00"/>-->
+<!--      <column name="end_period" value="2022-31-12T00:00:00"/>-->
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="calendars">
+      <column name="active" value="true"/>
+      <column name="name" value="Полуовая оценка компаний"/>
+      <column name="description" value="Полуовая оценка компаний зима-лето"/>
+<!--      <column name="begin_period" value="2022-01-01T00:00:00"/>-->
+<!--      <column name="end_period" value="2022-30-06T00:00:00"/>-->
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="calendars">
+      <column name="active" value="true"/>
+      <column name="name" value="Полуовая оценка компаний"/>
+      <column name="description" value="Полуовая оценка компаний лето-зима"/>
+<!--      <column name="begin_period" value="2022-01-07T00:00:00"/>-->
+<!--      <column name="end_period" value="2022-31-12T00:00:00"/>-->
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="calendars">
+      <column name="active" value="true"/>
+      <column name="name" value="1 квартал оценка компаний"/>
+      <column name="description" value="1 квартал оценка компаний"/>
+<!--      <column name="begin_period" value="2022-01-01T00:00:00"/>-->
+<!--      <column name="end_period" value="2022-31-03T00:00:00"/>-->
+      <column name="company_id" value="3"/>
+    </insert>
+    <insert tableName="calendars">
+      <column name="active" value="true"/>
+      <column name="name" value="1 квартал оценка компаний"/>
+      <column name="description" value="1 квартал оценка компаний"/>
+<!--      <column name="begin_period" value="2022-01-01T00:00:00"/>-->
+<!--      <column name="end_period" value="2022-31-03T00:00:00"/>-->
+      <column name="company_id" value="2"/>
+    </insert>
+    <insert tableName="calendars">
+      <column name="active" value="true"/>
+      <column name="name" value="3 квартал оценка компаний"/>
+      <column name="description" value="3 квартал оценка компаний"/>
+<!--      <column name="begin_period" value="2022-01-07T00:00:00"/>-->
+<!--      <column name="end_period" value="2022-30-09T00:00:00"/>-->
+      <column name="company_id" value="3"/>
+    </insert>
+    <insert tableName="calendars">
+      <column name="active" value="true"/>
+      <column name="name" value="Полуовая оценка компаний"/>
+      <column name="description" value="Полуовая оценка компаний лето-зима"/>
+<!--      <column name="begin_period" value="2022-01-07T00:00:00"/>-->
+<!--      <column name="end_period" value="2022-31-12T00:00:00"/>-->
+      <column name="company_id" value="4"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

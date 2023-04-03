@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <property name="uuid_type" value="uuid" dbms="postgresql"/>
+  <property name="uuid_type" value="uuid" dbms="h2"/>
+
+  <property name="uuid_function" value="gen_random_uuid()" dbms="postgresql"/>
+  <property name="uuid_function" value="uuid()" dbms="h2"/>
+
+  <!-- Проверяем есть ли таблица employees -->
+  <changeSet id="drop-table-employees" author="dg">
+    <preConditions onFail="MARK_RAN">
+      <tableExists tableName="employees" />
+    </preConditions>
+    <dropTable cascadeConstraints="true" tableName="employees"/>
+  </changeSet>
+  <!-- create table employees -->
+  <changeSet id="create-table-employees" author="dg">
+    <createTable tableName="employees" >
+      <column autoIncrement="true" name="id" type="bigserial">
+        <constraints primaryKey="true" nullable="false" primaryKeyName="pk_employee"/>
+      </column>
+      <column name="created_at" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="updated_at" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="active" type="boolean" defaultValue="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="public_id" type="${uuid_type}" defaultValueComputed="${uuid_function}">
+        <constraints nullable="false" unique="true" uniqueConstraintName="idx_employee_uuid_unq"/>
+      </column>
+      <column name="first_name" type="varchar(200)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="last_name" type="varchar(200)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="email" type="varchar(200)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="username" type="varchar(200)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="description" type="text">
+        <constraints nullable="false"/>
+      </column>
+      <column name="birth_date" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP(3)">
+        <constraints nullable="true"/>
+      </column>
+      <column name="department_id" type="bigint">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+</databaseChangeLog>

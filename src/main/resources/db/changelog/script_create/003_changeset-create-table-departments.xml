@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <property name="uuid_type" value="uuid" dbms="postgresql"/>
+  <property name="uuid_type" value="uuid" dbms="h2"/>
+
+  <property name="uuid_function" value="gen_random_uuid()" dbms="postgresql"/>
+  <property name="uuid_function" value="uuid()" dbms="h2"/>
+
+  <!-- Проверяем есть ли таблица departments -->
+  <changeSet id="drop-table-departments" author="dg">
+    <preConditions onFail="MARK_RAN">
+      <tableExists tableName="departments" />
+    </preConditions>
+    <dropTable cascadeConstraints="true" tableName="departments"/>
+  </changeSet>
+  <!-- create table departments -->
+  <changeSet id="create-table-departments" author="dg">
+    <createTable tableName="departments" >
+      <column autoIncrement="true" name="id" type="bigserial">
+        <constraints primaryKey="true" nullable="false" primaryKeyName="pk_department"/>
+      </column>
+      <column name="created_at" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="updated_at" type="timestamp" defaultValueDate="CURRENT_TIMESTAMP(3)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="active" type="boolean" defaultValue="false">
+        <constraints nullable="false"/>
+      </column>
+      <column name="public_id" type="${uuid_type}" defaultValueComputed="${uuid_function}">
+        <constraints nullable="false" unique="true" uniqueConstraintName="idx_department_uuid_unq"/>
+      </column>
+      <column name="full_name" type="varchar(255)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="small_name" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="description" type="text">
+        <constraints nullable="false"/>
+      </column>
+      <column name="company_id" type="bigint">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+    <!-- Добавляем вторичный ключ department_id таблица employees -->
+    <addForeignKeyConstraint
+      baseColumnNames="department_id"
+      baseTableName="employees"
+      constraintName="fk_employees_department"
+      referencedColumnNames="id"
+      referencedTableName="departments"
+      onDelete="CASCADE"
+      onUpdate="RESTRICT"/>
+  </changeSet>
+</databaseChangeLog>

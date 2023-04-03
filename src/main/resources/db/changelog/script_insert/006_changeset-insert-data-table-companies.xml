@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet id="insert-data-table-companies" author="dg">
+    <insert tableName="companies">
+      <column name="active" value="true"/>
+      <column name="name" value="ООО Рога и копыта"/>
+      <column name="description" value="компания О.Бендера"/>
+    </insert>
+    <insert tableName="companies">
+      <column name="active" value="true"/>
+      <column name="name" value="ПАО НК РОСНЕФТЬ" />
+      <column name="description" value="ПАО НК РОСНЕФТЬ 8 трлн ИНН 7706107510."/>
+    </insert>
+    <insert tableName="companies">
+      <column name="active" value="true"/>
+      <column name="name" value="ПАО ГАЗПРОМ"/>
+      <column name="description" value="ПАО ГАЗПРОМ 6 трлн ИНН 7736050003."/>
+    </insert>
+    <insert tableName="companies">
+      <column name="active" value="true"/>
+      <column name="name" value="ОАО РЖД"/>
+      <column name="description" value="ОАО РЖД 2 трлн ИНН 7708503727."/>
+    </insert>
+    <insert tableName="companies">
+      <column name="active" value="true"/>
+      <column name="name" value="АО ТАНДЕР"/>
+      <column name="description" value="АО ТАНДЕР 2 трлн ИНН 2310031475."/>
+    </insert>
+    <insert tableName="companies">
+      <column name="active" value="true"/>
+      <column name="name" value="ПАО СУРГУТНЕФТЕГАЗ"/>
+      <column name="description" value="ПАО СУРГУТНЕФТЕГАЗ ИНН 8602060555."/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

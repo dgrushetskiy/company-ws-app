@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet id="insert-data-table-employees" author="dg">
+    <!--    Администрация -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Иван"/>
+      <column name="last_name" value="Иванов"/>
+      <column name="email" value="dag@gmail.com"/>
+      <column name="username" value="dag"/>
+      <column name="description" value="Директор по развитию"/>
+      <column name="department_id" value="1"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Петр"/>
+      <column name="last_name" value="Петров"/>
+      <column name="email" value="pat@gmail.com"/>
+      <column name="username" value="pat"/>
+      <column name="description" value="Зам директора по кадрам"/>
+      <column name="department_id" value="1"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Сидр"/>
+      <column name="last_name" value="Сидоров"/>
+      <column name="email" value="sid@gmail.com"/>
+      <column name="username" value="sid"/>
+      <column name="description" value="Коммерческий директор"/>
+      <column name="department_id" value="1"/>
+    </insert>
+    <!--    Отдел кадров -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Аглая"/>
+      <column name="last_name" value="Иванова"/>
+      <column name="email" value="agldagon@gmail.com"/>
+      <column name="username" value="agldagon"/>
+      <column name="description" value="Начальник отдела"/>
+      <column name="department_id" value="2"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Светлана"/>
+      <column name="last_name" value="Федоровна"/>
+      <column name="email" value="chuk@gmail.com"/>
+      <column name="username" value="chuk"/>
+      <column name="description" value="специалист"/>
+      <column name="department_id" value="2"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Ирина"/>
+      <column name="last_name" value="Сергеевна"/>
+      <column name="email" value="iserg@gmail.com"/>
+      <column name="username" value="iserg"/>
+      <column name="description" value="кадровик"/>
+      <column name="department_id" value="2"/>
+    </insert>
+    <!--    Отдел маркетинга -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Евгений"/>
+      <column name="last_name" value="Иванов"/>
+      <column name="email" value="evdag@gmail.com"/>
+      <column name="username" value="evdag"/>
+      <column name="description" value="Начальник отдела"/>
+      <column name="department_id" value="3"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Петр"/>
+      <column name="last_name" value="Чук"/>
+      <column name="email" value="chuk@gmail.com"/>
+      <column name="username" value="chuk"/>
+      <column name="description" value="специалист по маркетингу"/>
+      <column name="department_id" value="3"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Сидр"/>
+      <column name="last_name" value="Гек"/>
+      <column name="email" value="gek@gmail.com"/>
+      <column name="username" value="gek"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="3"/>
+    </insert>
+    <!--    Отдел продаж -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Андрей"/>
+      <column name="last_name" value="Либерман"/>
+      <column name="email" value="liberman@gmail.com"/>
+      <column name="username" value="liberman"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="4"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Петр"/>
+      <column name="last_name" value="Доберман"/>
+      <column name="email" value="doberman@gmail.com"/>
+      <column name="username" value="doberman"/>
+      <column name="description" value="эксклюзивный продавец"/>
+      <column name="department_id" value="4"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Наина"/>
+      <column name="last_name" value="Фильтрацид"/>
+      <column name="email" value="filtracid@gmail.com"/>
+      <column name="username" value="filtracid"/>
+      <column name="description" value="Лучший продавец года"/>
+      <column name="department_id" value="4"/>
+    </insert>
+    <!--    Отдел финансов -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Федор"/>
+      <column name="last_name" value="Федоров"/>
+      <column name="email" value="fadicdag@gmail.com"/>
+      <column name="username" value="fadicdag"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="5"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Светлана"/>
+      <column name="last_name" value="Ивановна"/>
+      <column name="email" value="chupakabra@gmail.com"/>
+      <column name="username" value="chupakabra"/>
+      <column name="description" value="аналитик финансист"/>
+      <column name="department_id" value="5"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Кадобр"/>
+      <column name="last_name" value="Крафт"/>
+      <column name="email" value="kadobr@gmail.com"/>
+      <column name="username" value="kadobr"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="5"/>
+    </insert>
+    <!--    Отдел логистики -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Прокоп"/>
+      <column name="last_name" value="Окопов"/>
+      <column name="email" value="vokopeprokop@gmail.com"/>
+      <column name="username" value="vokopeprokop"/>
+      <column name="description" value="Чемпион логических олимпиад"/>
+      <column name="department_id" value="6"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Игнат"/>
+      <column name="last_name" value="Тугой"/>
+      <column name="email" value="ignat@gmail.com"/>
+      <column name="username" value="ignat"/>
+      <column name="description" value="водитель"/>
+      <column name="department_id" value="6"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Эльвира"/>
+      <column name="last_name" value="Кондратьевна"/>
+      <column name="email" value="fekla@gmail.com"/>
+      <column name="username" value="fekla"/>
+      <column name="description" value="работник с ада, участник олимпиады"/>
+      <column name="department_id" value="6"/>
+    </insert>
+    <!--    Отдел IT -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Дмитрий"/>
+      <column name="last_name" value="Александрович"/>
+      <column name="email" value="gotdag@gmail.com"/>
+      <column name="username" value="gotdag"/>
+      <column name="description" value="Руководитель работник года, участник олимпиады"/>
+      <column name="department_id" value="7"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Петр"/>
+      <column name="last_name" value="Чукотка"/>
+      <column name="email" value="chukotka@gmail.com"/>
+      <column name="username" value="chukotka"/>
+      <column name="description" value="backend"/>
+      <column name="department_id" value="7"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Сидр"/>
+      <column name="last_name" value="Геката"/>
+      <column name="email" value="gekata@gmail.com"/>
+      <column name="username" value="gekata"/>
+      <column name="description" value="работник года, участник олимпиады frontend "/>
+      <column name="department_id" value="7"/>
+    </insert>
+    <!--    Отдел закупок -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Иван"/>
+      <column name="last_name" value="Иванов"/>
+      <column name="email" value="dag@gmail.com"/>
+      <column name="username" value="dag"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="8"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Петр"/>
+      <column name="last_name" value="Чук"/>
+      <column name="email" value="chuk@gmail.com"/>
+      <column name="username" value="chuk"/>
+      <column name="description" value="инженер по монтажу"/>
+      <column name="department_id" value="8"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Сидр"/>
+      <column name="last_name" value="Гек"/>
+      <column name="email" value="gek@gmail.com"/>
+      <column name="username" value="gek"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="8"/>
+    </insert>
+    <!--    Отдел АХО -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Иван"/>
+      <column name="last_name" value="Иванов"/>
+      <column name="email" value="dag@gmail.com"/>
+      <column name="username" value="dag"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="9"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Петр"/>
+      <column name="last_name" value="Чук"/>
+      <column name="email" value="chuk@gmail.com"/>
+      <column name="username" value="chuk"/>
+      <column name="description" value="инженер по монтажу"/>
+      <column name="department_id" value="9"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Сидр"/>
+      <column name="last_name" value="Гек"/>
+      <column name="email" value="gek@gmail.com"/>
+      <column name="username" value="gek"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="9"/>
+    </insert>
+    <!--    Отдел исследования и развития -->
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Иван"/>
+      <column name="last_name" value="Иванов"/>
+      <column name="email" value="dag@gmail.com"/>
+      <column name="username" value="dag"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="10"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Петр"/>
+      <column name="last_name" value="Чук"/>
+      <column name="email" value="chuk@gmail.com"/>
+      <column name="username" value="chuk"/>
+      <column name="description" value="инженер по монтажу"/>
+      <column name="department_id" value="10"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="active" value="true"/>
+      <column name="first_name" value="Сидр"/>
+      <column name="last_name" value="Гек"/>
+      <column name="email" value="gek@gmail.com"/>
+      <column name="username" value="gek"/>
+      <column name="description" value="работник года, участник олимпиады"/>
+      <column name="department_id" value="10"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

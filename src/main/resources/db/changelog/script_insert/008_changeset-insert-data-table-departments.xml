@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog logicalFilePath="db/changelog/changelog.xml"
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+  <changeSet id="insert-data-table-departments" author="dg">
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Администрация"/>
+      <column name="small_name" value="CIO"/>
+      <column name="description" value="Ключевую роль в деятельности и развитии компании играет администрация. Именно она является интегрирующим звеном, создающим условия для эффективной работы всех департаментов."/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел кадров"/>
+      <column name="small_name" value="Кадры"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел маркетинга"/>
+      <column name="small_name" value="маркетинг"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел продаж"/>
+      <column name="small_name" value="продажи"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел финансов"/>
+      <column name="small_name" value="финансы"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел логистики"/>
+      <column name="small_name" value="логистика"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел IT"/>
+      <column name="small_name" value="IT"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел закупок"/>
+      <column name="small_name" value="закупки"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел АХО"/>
+      <column name="small_name" value="АХО"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+    <insert tableName="departments">
+      <column name="active" value="true"/>
+      <column name="full_name" value="Отдел исследования и развития"/>
+      <column name="small_name" value="ОиР"/>
+      <column name="description" value=""/>
+      <column name="company_id" value="1"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
