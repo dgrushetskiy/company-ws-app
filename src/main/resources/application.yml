@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: company-ws-app
+  profiles:
+    active: local
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+  jmx:
+    enabled: false
+  liquibase:
+    contexts: ${spring.profiles.active}
+    enabled: true
+  main:
+    banner-mode: 'off'
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  cache:
+    disabled: true
+  swagger-ui:
+    config-url: /api-docs/swagger-config
+    disable-swagger-default-url: true
+    path: /swagger-ui.html
+    url: /api-docs
+    use-root-path: true
+
+server:
+  compression:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      base-path: /api/v1
+      exposure:
+        include: health,info,beans
+
+app:
+  cors:
+    allowedOrigins: http://localhost:3000
+debug: true
+
+
+logging:
+  file:
+    path: /home/company-ws-app/log/app.log
+  level:
+    com:
+      zaxxer:
+        hikari:
+          HikariConfig: DEBUG
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql: trace
+  pattern:
+    console: '"%d{yyyy-MM-dd HH:mm:ss} - %msg%n"'
+    file: '"%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"'
